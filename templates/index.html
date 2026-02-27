@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multilingual Translator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>English ↔ Hindi ↔ Punjabi Translator</h2>
+
+<form action="/translate" method="post">
+    
+    <label>Source Language:</label>
+    <select name="source_lang" required>
+        <option value="english">English</option>
+        <option value="hindi">Hindi</option>
+        <option value="punjabi">Punjabi</option>
+    </select>
+
+    <label>Target Language:</label>
+    <select name="target_lang" required>
+        <option value="english">English</option>
+        <option value="hindi">Hindi</option>
+        <option value="punjabi">Punjabi</option>
+    </select>
+
+    <br><br>
+
+    <textarea name="text" rows="4" cols="50" placeholder="Enter text here..." required></textarea>
+
+    <br><br>
+    <button type="submit">Translate</button>
+
+</form>
+
+{% if result %}
+<h3>Translated Text:</h3>
+<p>{{ result }}</p>
+{% endif %}
+
+</body>
+</html>
